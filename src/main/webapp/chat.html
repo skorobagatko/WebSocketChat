@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat</title>
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript">
+        var ws;
+        function init() {
+            var login = window.location.search;
+            login = login.substring(login.indexOf("=")+1);
+            var decodedLogin = decodeURIComponent(login);
+            var loginField = document.getElementById("login");
+            loginField.value = decodedLogin;
+
+            ws = new WebSocket("ws://localhost:8080/chat");
+
+            ws.onopen = function (event) {
+                ws.send(document.getElementById("login").value + " joined to us");
+            };
+
+            ws.onmessage = function (event) {
+                var $textarea = document.getElementById("messages");
+                $textarea.value = $textarea.value + event.data + "\n";
+                autoScroll();
+            };
+
+            ws.onclose = function (event) {
+                ws.send(document.getElementById("login").value + " left the chat");
+            }
+        }
+
+        function handle(event) {
+            if(event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("sendMessageButton").click();
+            }
+        }
+
+        function autoScroll() {
+            var textarea = document.getElementById("messages");
+            textarea.scrollTop = textarea.scrollHeight;
+        }
+
+        function sendMessage() {
+            var messageField = document.getElementById("message");
+            var loginField = document.getElementById("login");
+            var message = loginField.value + ": " + messageField.value;
+            ws.send(message);
+            autoScroll();
+            messageField.value = '';
+        }
+    </script>
+</head>
+<body onload="init();" bgcolor="#81d4fa">
+<div id="body" align="center">
+    <div id="chatbox">
+        <br><br>
+        <textarea id="messages" readonly="readonly"></textarea>
+    </div>
+    <div id="messagebox">
+        <form name="messageForm" action="">
+            <input id="login" value="Anonymous" hidden/>
+            <input name="usermsg" type="text" id="message" size="90" onkeypress="handle(event)" autofocus/>
+            <input type="button" name="submitmsg" id="sendMessageButton" value="Send" onclick="sendMessage();"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

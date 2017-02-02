@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login to chat</title>
+    <meta name="description" content="">
+    <meta name="author" content="Stanislav Skorobahatko">
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript">
+        function sendLogin() {
+            var login = document.getElementById("loginInput").value;
+            document.getElementById("loginInput").value = '';
+            window.location = "chat.html?login=" + encodeURIComponent(login);
+        }
+
+        function handle(event) {
+            if(event.keyCode === 13) {
+                event.preventDefault();
+                sendLogin();
+            }
+        }
+    </script>
+</head>
+<body bgcolor="#81d4fa">
+<div id="loginBlock" align="center">
+    <p>Input your login here</p>
+    <input type="text" id="loginInput" size="30" pattern="^[a-zA-ZА-Яа-яЁё\s]+$" value="Anonymous" onkeypress="handle(event)" autofocus>
+    <br>
+    <br>
+    <a href="javascript: sendLogin();" class="button">Login</a>
+</div>
+</body>
+</html>

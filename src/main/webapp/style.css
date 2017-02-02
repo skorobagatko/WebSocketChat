@@ -1,0 +1,110 @@
+#loginBlock {
+    width:  350px;
+    height: 160px;
+    margin-left: -175px;
+    margin-top: -80px;
+    left: 50%;
+    top: 50%;
+    position:absolute;
+    border-radius: 0 40px; /* Для современных браузеров */
+    background-color: #4dd0e1;
+    font: bold 14pt Arial, Helvetica, sans-serif;
+}
+
+#loginInput {
+    font: 12pt Arial, Helvetica, sans-serif;
+}
+
+#body {
+    width:  800px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    margin-left: -400px;
+    margin-top: -300px;
+    position: absolute;
+}
+
+#chatbox {
+    width: 800;
+    height: 450;
+    border-radius: 0 40px;
+    background-color: #ffffff;
+}
+
+#messagebox {
+    width: 800;
+    height: 80;
+    border-radius: 40px 0px;
+    background-color: #4dd0e1;
+    margin-top: 10px;
+}
+
+#messages {
+    width: 780px;
+    height: 370px;
+    border: none;
+    resize : none;
+    font: 12pt Arial, Helvetica, sans-serif;
+}
+
+#message {
+    font: 12pt Arial, Helvetica, sans-serif;
+    margin-top: 25px;
+    border: none;
+}
+
+#sendMessageButton {
+    font: 12pt Arial, Helvetica, sans-serif;
+    background-color: #81d4fa;
+}
+
+.button {
+	text-decoration:none;
+	text-align:center;
+	padding:7px 14px;
+	border:none;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius: 4px;
+	font:16px Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#ffffff;
+	background:#039be5;
+	-webkit-box-shadow:0px 0px -20px #ffffff, inset 0px 0px -20px #ffffff;
+	-moz-box-shadow: 0px 0px -20px #ffffff,  inset 0px 0px -20px #ffffff;
+	box-shadow:0px 0px -20px #ffffff, inset 0px 0px -20px #ffffff;
+	align:center;
+}
+
+.button:hover {
+ padding:7px 14px;
+ border:none;
+ -webkit-border-radius:4px;
+ -moz-border-radius:4px;
+ border-radius: 4px;
+ font:16px Arial, Helvetica, sans-serif;
+ font-weight:bold;
+ color:#ffffff;
+ background:#29b6f6;
+ -webkit-box-shadow:0px 0px -20px #bababa, inset 0px 0px -20px #ffffff;
+ -moz-box-shadow: 0px 0px -20px #bababa,  inset 0px 0px -20px #ffffff;
+ box-shadow:0px 0px -20px #bababa, inset 0px 0px -20px #ffffff;
+
+
+ }
+
+ .button:active{
+ padding:7px 14px;
+ border:none;
+ -webkit-border-radius:4px;
+ -moz-border-radius:4px;
+ border-radius: 4px;
+ font:16px Arial, Helvetica, sans-serif;
+ font-weight:bold;
+ color:#ffffff;
+ background:#4fc3f7;
+ -webkit-box-shadow:0px 0px -20px #ffffff, inset 0px 0px -20px #ffffff;
+ -moz-box-shadow: 0px 0px -20px #ffffff,  inset 0px 0px -20px #ffffff;
+ box-shadow:0px 0px -20px #ffffff, inset 0px 0px -20px #ffffff;
+ }
