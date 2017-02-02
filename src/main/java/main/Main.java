@@ -30,7 +30,7 @@ public class Main {
             HandlerList handlers = new HandlerList();
             handlers.setHandlers(new Handler[]{resource_handler, context, webAppContext});
 
-            InetSocketAddress address = new InetSocketAddress("java-chat.herokuapp.com/", 8080);
+            InetSocketAddress address = new InetSocketAddress("java-chat.herokuapp.com", 8080);
             Server server = new Server(address);
             server.setHandler(handlers);
             server.start();
