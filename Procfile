@@ -1,1 +1,1 @@
-web: java -jar target/web-chat-1.0-SNAPSHOT.jar
+web: java -cp target/classes/main Main
