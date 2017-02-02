@@ -12,7 +12,7 @@
             var loginField = document.getElementById("login");
             loginField.value = decodedLogin;
 
-            ws = new WebSocket("ws://java-chat.herokuapp.com:8080/chat");
+            ws = new WebSocket("ws://java-chat.herokuapp.com:80/chat");
 
             ws.onopen = function (event) {
                 ws.send(document.getElementById("login").value + " joined to us");
