@@ -1,1 +1,1 @@
-web: java -cp target/classes/main Main
+web: java -jar target/web-chat-1.0-jar-with-dependencies.jar
