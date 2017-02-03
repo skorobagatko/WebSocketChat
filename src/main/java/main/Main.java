@@ -19,13 +19,13 @@ public class Main {
             context.addServlet(new ServletHolder(new WebSocketChatServlet()), "/chat");
 
             ResourceHandler resource_handler = new ResourceHandler();
-            resource_handler.setResourceBase("src/main/webapp");
+            resource_handler.setResourceBase("src/main/resources");
             resource_handler.setDirectoriesListed(true);
             resource_handler.setWelcomeFiles(new String[]{"index.html"});
 
             WebAppContext webAppContext = new WebAppContext();
             webAppContext.setContextPath("/");
-            webAppContext.setResourceBase("src/main/webapp");
+            webAppContext.setResourceBase("src/main/resources");
 
             HandlerList handlers = new HandlerList();
             handlers.setHandlers(new Handler[]{resource_handler, context, webAppContext});
