@@ -35,6 +35,7 @@ public class Main {
             server.setHandler(handlers);
             server.start();
             server.join();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
